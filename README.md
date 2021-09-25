@@ -1,2 +1,2 @@
 # practise-nodejs-graphql
-Node + Express + GraphQL + Apollo serser
+Node + Express + GraphQL + Apollo server
