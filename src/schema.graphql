@@ -1,0 +1,17 @@
+type Query {
+    info: String!
+    all: [Comic!]!
+    read(id: ID!): Comic
+}
+
+type Mutation {
+    create(name: String!, author: String!): Comic!
+    update(id: ID!, name: String!, author: String!): Comic!
+    delete(id: ID!): Comic!
+}
+
+type Comic {
+    id: ID!
+    name: String!
+    author: String!
+}
