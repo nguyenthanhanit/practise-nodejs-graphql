@@ -52,22 +52,30 @@ const resolvers = {
             return comic
         },
         update: (parent, args) => {
-            _.remove(comics, function (comic) {
+            let comic = _.find(comics, function (comic) {
                 return comic.id === parseInt(args.id);
             })
-            const comic = {
-                id: args.id,
-                name: args.name,
-                author: args.author,
+            _.remove(comics, function (c) {
+                return c === comic
+            })
+            const updateComic = {
+                ...comic,
+                ...{
+                    name: args.name,
+                    author: args.author
+                }
             }
-            comics.push(comic)
-            return comic
+            comics.push(updateComic)
+            return updateComic
         },
         delete: (parent, args) => {
-            _.remove(comics, function (comic) {
+            let comic = _.find(comics, function (comic) {
                 return comic.id === parseInt(args.id);
             })
-            return comics
+            _.remove(comics, function (c) {
+                return c === comic
+            })
+            return comic
         },
     },
 }
