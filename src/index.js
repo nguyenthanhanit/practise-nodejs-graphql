@@ -2,80 +2,33 @@ const {ApolloServer} = require('apollo-server');
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
+const sequelizeProvider = require('./sequelize/index');
 
-let comics = [
-    {
-        id: 1,
-        name: 'Thiên Long Bát Bộ',
-        author: 'Kim Dung'
-    },
-    {
-        id: 2,
-        name: 'Anh Hùng Xạ Điêu',
-        author: 'Kim Dung'
-    },
-    {
-        id: 3,
-        name: 'Thần Điêu Đại Hiệp',
-        author: 'Kim Dung'
-    },
-    {
-        id: 4,
-        name: 'Ỷ Thiên Đồ Long Ký',
-        author: 'Kim Dung'
-    },
-    {
-        id: 5,
-        name: 'Tuyệt Đại Song Kiêu',
-        author: 'Cổ Long'
-    },
-]
+sequelizeProvider.init();
 
 const resolvers = {
     Query: {
-        info: () => `Truyện tổng hợp`,
-        all: () => comics,
-        read: (parent, args) => {
-            return _.find(comics, function (comic) {
-                return comic.id === parseInt(args.id);
-            })
+        read: (parent, args, context) => {
+            console.log(parent)
+            return context.sequelizeProvider.getModel().findByPk(args.id)
         },
     },
     Mutation: {
-        create: (parent, args) => {
-            const comic = {
-                id: _.size(comics) + 1,
-                name: args.name,
-                author: args.author,
-            }
-            comics.push(comic)
-            return comic
+        create: (parent, args, context) => {
+            return context.sequelizeProvider.getModel().create(args)
         },
-        update: (parent, args) => {
-            let comic = _.find(comics, function (comic) {
-                return comic.id === parseInt(args.id);
-            })
-            _.remove(comics, function (c) {
-                return c === comic
-            })
-            const updateComic = {
-                ...comic,
-                ...{
-                    name: args.name,
-                    author: args.author
+        async update(parent, args, context) {
+            await context.sequelizeProvider.getModel().update(args, {
+                where: {
+                    id: args.id
                 }
-            }
-            comics.push(updateComic)
-            return updateComic
+            })
+            return await context.sequelizeProvider.getModel().findByPk(args.id)
         },
-        delete: (parent, args) => {
-            let comic = _.find(comics, function (comic) {
-                return comic.id === parseInt(args.id);
-            })
-            _.remove(comics, function (c) {
-                return c === comic
-            })
-            return comic
+        delete(parent, args, context) {
+            return context.sequelizeProvider.getModel().destroy({
+                where: args
+            });
         },
     },
 }
@@ -86,6 +39,9 @@ const server = new ApolloServer({
         'utf8'
     ),
     resolvers,
+    context: {
+        sequelizeProvider,
+    }
 })
 
 // The `listen` method launches a web server.

@@ -20,6 +20,8 @@
   "dependencies": {
     "apollo-server": "^3.3.0",
     "graphql": "^15.6.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
   }
 }

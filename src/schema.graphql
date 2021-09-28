@@ -1,16 +1,14 @@
 type Query {
-    info: String!
-    all: [Comic!]!
-    read(id: ID!): Comic
+    read(id: ID!): Comics!
 }
 
 type Mutation {
-    create(name: String!, author: String!): Comic!
-    update(id: ID!, name: String!, author: String!): Comic!
-    delete(id: ID!): Comic!
+    create(name: String!, author: String!): Comics!
+    update(id: ID!, name: String!, author: String!): Comics!
+    delete(id: ID!): Int!
 }
 
-type Comic {
+type Comics {
     id: ID!
     name: String!
     author: String!
