@@ -1,4 +1,7 @@
 type Query {
+    getComics: [Comic]
+    getUsers: [User]
+
     getComic(id: ID!): Comic!
     getUser(id: ID!): User!
 }

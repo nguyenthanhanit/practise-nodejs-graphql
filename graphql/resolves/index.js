@@ -1,5 +1,12 @@
 module.exports = {
     Query: {
+        getUsers: (parent, args, context) => {
+            return context.User.findAll()
+        },
+        getComics: (parent, args, context) => {
+            return context.Comic.findAll()
+        },
+
         getUser: (parent, args, context) => {
             return context.User.findByPk(args.id)
         },

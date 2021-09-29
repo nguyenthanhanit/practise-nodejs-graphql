@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             this.hasMany(models.Comic, {foreignKey: 'author'})
         }
     }
+
     User.init({
         name: DataTypes.STRING,
         email: DataTypes.STRING,

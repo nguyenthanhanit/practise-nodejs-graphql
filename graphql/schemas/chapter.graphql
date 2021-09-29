@@ -1,7 +1,7 @@
-type Comic implements Base {
+type Chapter implements Base {
     id: ID!
     name: String!
-    author: String!
+    comic: Int!
     createdAt: String
     updatedAt: String
 }

@@ -1,6 +1,8 @@
-type User {
+type User implements Base {
     id: ID!
     name: String!
     email: String!
     password: String!
+    createdAt: String
+    updatedAt: String
 }

@@ -1,7 +1,6 @@
-type Comic implements Base {
+interface Base {
     id: ID!
     name: String!
-    author: String!
     createdAt: String
     updatedAt: String
 }
