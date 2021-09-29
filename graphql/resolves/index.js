@@ -1,14 +1,17 @@
 module.exports = {
     Query: {
-        read: (parent, args, context) => {
+        getUser: (parent, args, context) => {
             return context.User.findByPk(args.id)
+        },
+        getComic: (parent, args, context) => {
+            return context.Comic.findByPk(args.id)
         },
     },
     Mutation: {
-        create: (parent, args, context) => {
+        createUser: (parent, args, context) => {
             return context.User.create(args)
         },
-        async update(parent, args, context) {
+        async updateUser(parent, args, context) {
             await context.User.update(args, {
                 where: {
                     id: args.id
@@ -16,8 +19,25 @@ module.exports = {
             })
             return await context.User.findByPk(args.id)
         },
-        delete(parent, args, context) {
+        deleteUser(parent, args, context) {
             return context.User.destroy({
+                where: args
+            });
+        },
+
+        createComic: (parent, args, context) => {
+            return context.Comic.create(args)
+        },
+        async updateComic(parent, args, context) {
+            await context.Comic.update(args, {
+                where: {
+                    id: args.id
+                }
+            })
+            return await context.Comic.findByPk(args.id)
+        },
+        deleteComic(parent, args, context) {
+            return context.Comic.destroy({
                 where: args
             });
         },
