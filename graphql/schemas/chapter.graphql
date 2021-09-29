@@ -1,6 +1,7 @@
 type Chapter implements Base {
     id: ID!
     name: String!
+    content: String!
     comic: Int!
     createdAt: String
     updatedAt: String
