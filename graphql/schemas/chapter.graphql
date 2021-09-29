@@ -1,8 +1,19 @@
-type Chapter implements Base {
+type Chapter{
     id: ID!
     name: String!
     content: String!
     comic: Int!
     createdAt: String
     updatedAt: String
+}
+
+extend type Query {
+    getChapters: [Chapter]
+    getChapter(id: ID!): Chapter!
+}
+
+extend type Mutation {
+    createChapter(name: String!, content: String!, comic: Int!): Chapter!
+    updateChapter(id: ID!, name: String, content: String, comic: Int): Chapter!
+    deleteChapter(id: ID!): Int!
 }

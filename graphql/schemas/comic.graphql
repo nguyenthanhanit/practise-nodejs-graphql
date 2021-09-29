@@ -1,7 +1,18 @@
-type Comic implements Base {
+type Comic {
     id: ID!
     name: String!
     author: Int!
     createdAt: String
     updatedAt: String
+}
+
+extend type Query {
+    getComics: [Comic]
+    getComic(id: ID!): Comic!
+}
+
+extend type Mutation {
+    createComic(name: String!, author: Int!): Comic!
+    updateComic(id: ID!, name: String, author: Int): Comic!
+    deleteComic(id: ID!): Int!
 }

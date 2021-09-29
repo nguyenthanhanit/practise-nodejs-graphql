@@ -1,17 +1,7 @@
 type Query {
-    getComics: [Comic]
-    getUsers: [User]
-
-    getComic(id: ID!): Comic!
-    getUser(id: ID!): User!
+    root: String
 }
 
 type Mutation {
-    createComic(name: String!, author: Int!): Comic!
-    updateComic(id: ID!, name: String, author: Int): Comic!
-    deleteComic(id: ID!): Int!
-
-    createUser(name: String!, email: String!, password: String!): User!
-    updateUser(id: ID!, name: String, email: String, password: String): User!
-    deleteUser(id: ID!): Int!
+    root: String
 }
