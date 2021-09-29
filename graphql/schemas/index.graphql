@@ -1,0 +1,9 @@
+type Query {
+    read(id: ID!): User!
+}
+
+type Mutation {
+    create(name: String!, email: String!, password: String!): User!
+    update(id: ID!, name: String, email: String, password: String): User!
+    delete(id: ID!): Int!
+}

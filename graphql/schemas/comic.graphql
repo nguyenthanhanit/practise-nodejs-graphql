@@ -1,0 +1,5 @@
+type Comic {
+    id: ID!
+    name: String!
+    author: String!
+}
