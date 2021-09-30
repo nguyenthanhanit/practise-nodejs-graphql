@@ -8,8 +8,9 @@ type User {
 }
 
 extend type Query {
-    getUsers: [User]
     getUser(id: ID!): User!
+    getUsers: [User]
+    getComicsUser(id: ID!): [Comic]
 }
 
 extend type Mutation {

@@ -7,8 +7,9 @@ type Comic {
 }
 
 extend type Query {
-    getComics: [Comic]
     getComic(id: ID!): Comic!
+    getComics: [Comic]
+    getAuthor(id: ID!): User!
 }
 
 extend type Mutation {
