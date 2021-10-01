@@ -3,8 +3,8 @@ type Chapter{
     name: String!
     content: String!
     comic: Int!
-    createdAt: String
-    updatedAt: String
+    createdAt: Datetime
+    updatedAt: Datetime
 }
 
 extend type Query {

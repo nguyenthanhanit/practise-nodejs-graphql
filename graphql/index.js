@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const resolves = require('./resolves');
-
+const scalars = require('./customScalars');
 const basename = path.basename(__filename);
 let typeDefs = '';
 
@@ -18,5 +18,5 @@ fs.readdirSync(`${__dirname}/schemas`)
 
 module.exports = {
     typeDefs: typeDefs,
-    resolvers: resolves
+    resolvers: [...scalars, ...resolves]
 }

@@ -1,3 +1,6 @@
+scalar Email
+scalar Datetime
+
 type Query {
     root: String
 }

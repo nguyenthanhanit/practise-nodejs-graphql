@@ -2,8 +2,8 @@ type Comic {
     id: ID!
     name: String!
     author: Int!
-    createdAt: String
-    updatedAt: String
+    createdAt: Datetime
+    updatedAt: Datetime
 }
 
 extend type Query {
