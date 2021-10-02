@@ -1,8 +1,5 @@
 module.exports = {
     Query: {
-        getChapters: (parent, args, context) => {
-            return context.Chapter.findAll()
-        },
         getChapter: (parent, args, context) => {
             return context.Chapter.findByPk(args.id)
         }

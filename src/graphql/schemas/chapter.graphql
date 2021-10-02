@@ -8,7 +8,6 @@ type Chapter{
 }
 
 extend type Query {
-    getChapters: [Chapter]
     getChapter(id: ID!): Chapter!
 }
 
