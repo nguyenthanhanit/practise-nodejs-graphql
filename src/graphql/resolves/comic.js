@@ -5,10 +5,6 @@ module.exports = {
         },
         getComic: (parent, args, context) => {
             return context.Comic.findByPk(args.id)
-        },
-        async getChapters(parent, args, context) {
-            const comic = await context.Comic.findByPk(args.id);
-            return await comic.getChapters();
         }
     },
     Mutation: {
@@ -29,4 +25,12 @@ module.exports = {
             });
         },
     },
+    Comic: {
+        author(author) {
+            return author.getUser()
+        },
+        chapters(chapters) {
+            return chapters.getChapters();
+        }
+    }
 }

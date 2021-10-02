@@ -5,10 +5,6 @@ module.exports = {
         },
         getUser: (parent, args, context) => {
             return context.User.findByPk(args.id)
-        },
-        async getComicsUser(parent, args, context) {
-            const user = await context.User.findByPk(args.id);
-            return await user.getComics();
         }
     },
     Mutation: {
@@ -27,6 +23,11 @@ module.exports = {
             return context.User.destroy({
                 where: args
             });
+        }
+    },
+    User: {
+        comics(comics) {
+            return comics.getComics()
         }
     },
 }

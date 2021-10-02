@@ -1,7 +1,8 @@
 type Comic {
     id: ID!
     name: String!
-    author: Int!
+    author: User!
+    chapters: [Chapter!]!
     createdAt: Datetime
     updatedAt: Datetime
 }
@@ -9,7 +10,6 @@ type Comic {
 extend type Query {
     getComic(id: ID!): Comic!
     getComics: [Comic]
-    getChapters(id: ID!): [Chapter]
 }
 
 extend type Mutation {

@@ -1,8 +1,7 @@
-type Chapter{
+type Chapter {
     id: ID!
     name: String!
     content: String!
-    comic: Int!
     createdAt: Datetime
     updatedAt: Datetime
 }

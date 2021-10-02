@@ -3,6 +3,7 @@ type User {
     name: String!
     email: Email!
     password: String!
+    comics: [Comic!]!
     createdAt: Datetime
     updatedAt: Datetime
 }
@@ -10,7 +11,6 @@ type User {
 extend type Query {
     getUser(id: ID!): User!
     getUsers: [User]
-    getComicsUser(id: ID!): [Comic]
 }
 
 extend type Mutation {
