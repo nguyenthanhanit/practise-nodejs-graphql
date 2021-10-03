@@ -1,5 +1,5 @@
-const user = require('./user');
+const author = require('./author');
 const comic = require('./comic');
 const chapter = require('./chapter');
 
-module.exports = [user, comic, chapter];
+module.exports = [author, comic, chapter];

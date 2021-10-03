@@ -1,0 +1,22 @@
+type Author {
+    id: ID!
+    name: String!
+    email: Email!
+    password: String!
+    gender: Int!
+    role: Int
+    comics: [Comic!]!
+    createdAt: Datetime
+    updatedAt: Datetime
+}
+
+extend type Query {
+    getAuthor(id: ID!): Author!
+    getAuthors: [Author]
+}
+
+extend type Mutation {
+    createAuthor(name: String!, email: Email!, password: String!): Author!
+    updateAuthor(id: ID!, name: String, email: Email, password: String): Author!
+    deleteAuthor(id: ID!): Int!
+}

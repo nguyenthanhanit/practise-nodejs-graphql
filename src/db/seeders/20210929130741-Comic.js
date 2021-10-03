@@ -14,61 +14,61 @@ module.exports = {
         await queryInterface.bulkInsert('Comics', [
             {
                 "name": "Friedrich",
-                "author": 3,
+                "authorId": 3,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
                 "name": "Orrin",
-                "author": 1,
+                "authorId": 1,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
                 "name": "Cheyanne",
-                "author": 3,
+                "authorId": 3,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
                 "name": "Frieda",
-                "author": 4,
+                "authorId": 4,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
                 "name": "Elda",
-                "author": 2,
+                "authorId": 2,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
                 "name": "Delmer",
-                "author": 2,
+                "authorId": 2,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
                 "name": "Marcellus",
-                "author": 4,
+                "authorId": 4,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
                 "name": "Madilyn",
-                "author": 2,
+                "authorId": 2,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
                 "name": "Micheal",
-                "author": 5,
+                "authorId": 5,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
                 "name": "Jean",
-                "author": 4,
+                "authorId": 4,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             }

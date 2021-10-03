@@ -12,11 +12,11 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            author: {
+            authorId: {
                 type: Sequelize.INTEGER,
                 references: {
                     model: {
-                        tableName: 'Users',
+                        tableName: 'Authors',
                     },
                     key: 'id',
                 },

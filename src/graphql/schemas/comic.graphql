@@ -1,7 +1,7 @@
 type Comic {
     id: ID!
     name: String!
-    author: User!
+    author: Author!
     chapters: [Chapter!]!
     createdAt: Datetime
     updatedAt: Datetime

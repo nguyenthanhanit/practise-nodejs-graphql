@@ -27,7 +27,7 @@ module.exports = {
     },
     Comic: {
         author(author) {
-            return author.getUser()
+            return author.getAuthor()
         },
         chapters(chapters) {
             return chapters.getChapters();

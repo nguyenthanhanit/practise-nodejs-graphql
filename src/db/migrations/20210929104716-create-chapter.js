@@ -16,7 +16,7 @@ module.exports = {
                 type: Sequelize.TEXT,
                 allowNull: false
             },
-            comic: {
+            comicId: {
                 type: Sequelize.INTEGER,
                 references: {
                     model: {
