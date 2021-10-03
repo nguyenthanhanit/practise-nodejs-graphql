@@ -3,6 +3,7 @@ type Comic {
     name: String!
     author: Author!
     chapters: [Chapter!]!
+    categories: [Category]
     createdAt: Datetime
     updatedAt: Datetime
 }

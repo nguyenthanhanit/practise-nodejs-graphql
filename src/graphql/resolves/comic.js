@@ -31,6 +31,9 @@ module.exports = {
         },
         chapters(chapters) {
             return chapters.getChapters();
+        },
+        categories(categories) {
+            return categories.getCategories()
         }
     }
 }
