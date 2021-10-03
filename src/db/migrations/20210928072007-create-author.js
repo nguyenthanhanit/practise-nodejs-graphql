@@ -12,19 +12,8 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            email: {
-                type: Sequelize.STRING,
-                allowNull: false,
-            },
             gender: {
                 type: Sequelize.BOOLEAN,
-                allowNull: false,
-            },
-            role: {
-                type: Sequelize.INTEGER
-            },
-            password: {
-                type: Sequelize.STRING,
                 allowNull: false,
             },
             createdAt: {
