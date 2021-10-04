@@ -13,14 +13,26 @@ module.exports = {
          */
         await queryInterface.bulkInsert('Categories', [
             {
-                "name": "A",
-                "description": "A",
+                "name": "Tình cảm",
+                "description": "Tình cảm",
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
-                "name": "B",
-                "description": "B",
+                "name": "Hài",
+                "description": "Hài",
+                "createdAt": new Date(),
+                "updatedAt": new Date()
+            },
+            {
+                "name": "Kiếm hiệp",
+                "description": "Hài",
+                "createdAt": new Date(),
+                "updatedAt": new Date()
+            },
+            {
+                "name": "Anime",
+                "description": "Anime",
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             }

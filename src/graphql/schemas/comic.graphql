@@ -4,6 +4,7 @@ type Comic {
     author: Author!
     chapters: [Chapter!]!
     categories: [Category]
+    type: Type
     createdAt: Datetime
     updatedAt: Datetime
 }

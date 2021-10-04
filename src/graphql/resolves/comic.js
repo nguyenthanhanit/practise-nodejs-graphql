@@ -34,6 +34,9 @@ module.exports = {
         },
         categories(categories) {
             return categories.getCategories()
+        },
+        type(type) {
+            return type.getType()
         }
     }
 }

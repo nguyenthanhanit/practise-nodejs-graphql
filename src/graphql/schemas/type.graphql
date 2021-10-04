@@ -1,0 +1,16 @@
+type Type {
+    id: ID!
+    name: String!
+    comics: [Comic]
+}
+
+extend type Query {
+    getType(id: ID!): Type!
+    getTypes: [Type]
+}
+
+extend type Mutation {
+    createType(name: String!, author: Int!): Type!
+    updateType(id: ID!, name: String, author: Int): Type!
+    deleteType(id: ID!): Int!
+}

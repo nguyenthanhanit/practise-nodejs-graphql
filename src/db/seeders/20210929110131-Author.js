@@ -13,32 +13,20 @@ module.exports = {
          */
         await queryInterface.bulkInsert('Authors', [
             {
-                "name": "Verla",
+                "name": "Kim Dung",
                 "gender": 1,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
-                "name": "General",
-                "gender": 0,
-                "createdAt": new Date(),
-                "updatedAt": new Date()
-            },
-            {
-                "name": "Aisha",
+                "name": "Cổ Long",
                 "gender": 1,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
-                "name": "Melba",
+                "name": "Nguyễn Nhật Ánh",
                 "gender": 1,
-                "createdAt": new Date(),
-                "updatedAt": new Date()
-            },
-            {
-                "name": "Jaleel",
-                "gender": 0,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             }

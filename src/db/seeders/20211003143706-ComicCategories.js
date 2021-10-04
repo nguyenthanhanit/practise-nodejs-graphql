@@ -14,13 +14,13 @@ module.exports = {
         await queryInterface.bulkInsert('ComicCategories', [
             {
                 "comicId": 1,
-                "categoryId": 1,
+                "categoryId": 3,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
                 "comicId": 1,
-                "categoryId": 2,
+                "categoryId": 1,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },

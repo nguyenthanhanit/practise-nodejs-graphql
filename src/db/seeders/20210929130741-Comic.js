@@ -11,64 +11,49 @@ module.exports = {
          *   isBetaMember: false
          * }], {});
          */
+        await queryInterface.bulkInsert('Types', [
+            {
+                "name": "Truyện tranh",
+                "createdAt": new Date(),
+                "updatedAt": new Date()
+            },
+            {
+                "name": "Truyện chữ",
+                "createdAt": new Date(),
+                "updatedAt": new Date()
+            },
+            {
+                "name": "Truyện audio",
+                "createdAt": new Date(),
+                "updatedAt": new Date()
+            }
+        ], {});
         await queryInterface.bulkInsert('Comics', [
             {
-                "name": "Friedrich",
-                "authorId": 3,
-                "createdAt": new Date(),
-                "updatedAt": new Date()
-            },
-            {
-                "name": "Orrin",
+                "name": "Thần điêu đại hiệp",
                 "authorId": 1,
+                "typeId": 2,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
-                "name": "Cheyanne",
+                "name": "Mắt biếc",
                 "authorId": 3,
+                "typeId": 2,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
-                "name": "Frieda",
-                "authorId": 4,
-                "createdAt": new Date(),
-                "updatedAt": new Date()
-            },
-            {
-                "name": "Elda",
+                "name": "Tuyệt đại song kiêu",
                 "authorId": 2,
+                "typeId": 3,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
-                "name": "Delmer",
-                "authorId": 2,
-                "createdAt": new Date(),
-                "updatedAt": new Date()
-            },
-            {
-                "name": "Marcellus",
-                "authorId": 4,
-                "createdAt": new Date(),
-                "updatedAt": new Date()
-            },
-            {
-                "name": "Madilyn",
-                "authorId": 2,
-                "createdAt": new Date(),
-                "updatedAt": new Date()
-            },
-            {
-                "name": "Micheal",
-                "authorId": 5,
-                "createdAt": new Date(),
-                "updatedAt": new Date()
-            },
-            {
-                "name": "Jean",
-                "authorId": 4,
+                "name": "Thần điêu đại hiệp",
+                "authorId": 1,
+                "typeId": 1,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             }
