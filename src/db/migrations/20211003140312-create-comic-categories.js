@@ -9,7 +9,9 @@ module.exports = {
                         tableName: 'Categories',
                     },
                     key: 'id'
-                }
+                },
+                onDelete: 'CASCADE',
+                onUpdate: 'CASCADE',
             },
             comicId: {
                 type: Sequelize.INTEGER,
@@ -18,7 +20,9 @@ module.exports = {
                         tableName: 'Comics',
                     },
                     key: 'id'
-                }
+                },
+                onDelete: 'CASCADE',
+                onUpdate: 'CASCADE',
             },
             createdAt: {
                 allowNull: false,

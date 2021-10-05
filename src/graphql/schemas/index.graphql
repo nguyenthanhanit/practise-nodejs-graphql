@@ -1,5 +1,6 @@
 scalar Email
 scalar Datetime
+scalar Array
 
 type Query {
     root: String
