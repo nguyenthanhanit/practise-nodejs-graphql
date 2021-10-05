@@ -11,7 +11,7 @@ extend type Query {
 }
 
 extend type Mutation {
-    createChapter(name: String!, content: String!, comic: Int!): Chapter!
-    updateChapter(id: ID!, name: String, content: String, comic: Int): Chapter!
+    createChapter(name: String!, content: String!, comicId: Int!): Chapter!
+    updateChapter(id: ID!, name: String, content: String, comicId: Int): Chapter!
     deleteChapter(id: ID!): Int!
 }

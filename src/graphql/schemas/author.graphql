@@ -13,7 +13,7 @@ extend type Query {
 }
 
 extend type Mutation {
-    createAuthor(name: String!, email: Email!, password: String!): Author!
-    updateAuthor(id: ID!, name: String, email: Email, password: String): Author!
+    createAuthor(name: String!, gender: Boolean!): Author!
+    updateAuthor(id: ID!, name: String, gender: Boolean!): Author!
     deleteAuthor(id: ID!): Int!
 }

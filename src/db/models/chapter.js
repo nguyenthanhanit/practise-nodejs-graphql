@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     Chapter.init({
         name: DataTypes.STRING,
         content: DataTypes.TEXT,
+        comicId: DataTypes.INTEGER
     }, {
         sequelize,
         modelName: 'Chapter',

@@ -15,7 +15,7 @@ extend type Query {
 }
 
 extend type Mutation {
-    createComic(name: String!, author: Int!): Comic!
-    updateComic(id: ID!, name: String, author: Int): Comic!
+    createComic(name: String!, authorId: Int!, typeId: Int!): Comic!
+    updateComic(id: ID!, name: String, authorId: Int, typeId: Int): Comic!
     deleteComic(id: ID!): Int!
 }
