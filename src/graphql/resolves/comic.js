@@ -10,8 +10,10 @@ module.exports = {
         }
     },
     Mutation: {
-        createComic: (parent, args, context) => {
-            return context.Comic.create(args)
+        async createComic(parent, args, context) {
+            const comic = await context.Comic.create(args);
+            await comic.addCategories(args.categories);
+            return context.Comic.findByPk(comic.id)
         },
         async updateComic(parent, args, context) {
             const comic = await context.Comic.findByPk(args.id, {
