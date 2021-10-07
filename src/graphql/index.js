@@ -3,6 +3,7 @@ const path = require('path');
 const resolves = require('./resolves');
 const scalars = require('./customScalars');
 const basename = path.basename(__filename);
+const {makeExecutableSchema} = require('@graphql-tools/schema');
 let typeDefs = '';
 
 fs.readdirSync(`${__dirname}/schemas`)
@@ -16,7 +17,7 @@ fs.readdirSync(`${__dirname}/schemas`)
         )
     });
 
-module.exports = {
-    typeDefs: typeDefs,
+module.exports = makeExecutableSchema({
+    typeDefs,
     resolvers: [...scalars, ...resolves]
-}
+})

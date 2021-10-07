@@ -1,9 +1,9 @@
 const {ApolloServer} = require('apollo-server');
-const graphql = require('./graphql');
+const schema = require('./graphql');
 const sequelize = require('./db/models');
 
 const server = new ApolloServer({
-    ...graphql,
+    schema,
     context: sequelize
 })
 
