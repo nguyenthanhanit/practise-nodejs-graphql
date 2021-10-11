@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
             this.belongsTo(models.Author)
             this.hasMany(models.Chapter)
-            this.belongsToMany(models.Category, { through: 'ComicCategories' });
+            this.belongsToMany(models.Category, {through: 'ComicCategories'});
             this.belongsTo(models.Type)
         }
     }
@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     Comic.init({
         name: DataTypes.STRING,
         authorId: DataTypes.INTEGER,
-        typeId: DataTypes.INTEGER
+        typeId: DataTypes.INTEGER,
+        visible: DataTypes.BOOLEAN
     }, {
         sequelize,
         modelName: 'Comic',
