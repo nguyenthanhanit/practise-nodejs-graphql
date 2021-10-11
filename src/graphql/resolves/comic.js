@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const {Op} = require("sequelize");
 
 module.exports = {
     Query: {
@@ -46,6 +47,32 @@ module.exports = {
             return context.Comic.destroy({
                 where: args
             });
+        },
+        async updateVisibleComic(parent, args, context) {
+            if (!_.isEmpty(args.PublicComics)) {
+                await context.Comic.update({
+                    visible: true
+                }, {
+                    where: {
+                        id: {
+                            [Op.or]: args.PublicComics
+                        }
+                    }
+                })
+            }
+            if (!_.isEmpty(args.PrivateComics)) {
+                await context.Comic.update({
+                    visible: false
+                }, {
+                    where: {
+                        id: {
+                            [Op.or]: args.PrivateComics
+                        }
+                    }
+                })
+            }
+
+            return 1
         },
     },
     Comic: {
