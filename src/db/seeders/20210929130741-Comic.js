@@ -33,6 +33,7 @@ module.exports = {
                 "name": "Thần điêu đại hiệp",
                 "authorId": 1,
                 "typeId": 2,
+                "visible": 1,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
@@ -40,6 +41,7 @@ module.exports = {
                 "name": "Mắt biếc",
                 "authorId": 3,
                 "typeId": 2,
+                "visible": 1,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
@@ -47,13 +49,15 @@ module.exports = {
                 "name": "Tuyệt đại song kiêu",
                 "authorId": 2,
                 "typeId": 3,
+                "visible": 0,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             },
             {
-                "name": "Thần điêu đại hiệp",
+                "name": "Anh hùng xạ điêu",
                 "authorId": 1,
                 "typeId": 1,
+                "visible": 1,
                 "createdAt": new Date(),
                 "updatedAt": new Date()
             }
