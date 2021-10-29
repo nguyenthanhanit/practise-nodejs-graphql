@@ -5,13 +5,11 @@ type AuthPayload {
 
 type User {
     id: ID!
-    name: String!
     email: Email!
 }
 
 extend type Query {
-    getUsers: [User],
-    newAuthor: Author
+    getUsers: [User]
 }
 extend type Mutation {
     signup(email: String!, password: String!): AuthPayload
