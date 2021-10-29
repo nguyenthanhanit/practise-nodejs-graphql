@@ -1,10 +1,21 @@
 const {ApolloServer} = require('apollo-server');
-const schema = require('./graphql');
-const sequelize = require('./db/models');
+require('dotenv').config();
+const schema = require('./graphql')
+const sequelize = require('./db/models')
+const {getUserId} = require('./utils')
 
 const server = new ApolloServer({
     schema,
-    context: sequelize
+    context: ({req}) => {
+        return {
+            ...req,
+            sequelize,
+            userId:
+                req && req.headers.authorization
+                    ? getUserId(req)
+                    : null
+        };
+    }
 })
 
 // The `listen` method launches a web server.

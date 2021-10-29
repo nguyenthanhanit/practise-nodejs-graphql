@@ -1,26 +1,26 @@
 module.exports = {
     Query: {
         getCategories: (parent, args, context) => {
-            return context.Category.findAll()
+            return context.sequelize.Category.findAll()
         },
         getCategory: (parent, args, context) => {
-            return context.Category.findByPk(args.id)
+            return context.sequelize.Category.findByPk(args.id)
         }
     },
     Mutation: {
         createCategory: (parent, args, context) => {
-            return context.Category.create(args)
+            return context.sequelize.Category.create(args)
         },
         async updateCategory(parent, args, context) {
-            await context.Category.update(args, {
+            await context.sequelize.Category.update(args, {
                 where: {
                     id: args.id
                 }
             })
-            return await context.Category.findByPk(args.id)
+            return await context.sequelize.Category.findByPk(args.id)
         },
         deleteCategory(parent, args, context) {
-            return context.Category.destroy({
+            return context.sequelize.Category.destroy({
                 where: args
             });
         },

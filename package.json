@@ -20,11 +20,14 @@
   "homepage": "https://github.com/nguyenthanhanit/practise-nodejs-graphql#readme",
   "dependencies": {
     "apollo-server": "^3.3.0",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^10.0.0",
     "graphql": "^15.6.0",
     "graphql-tools": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
+    "mysql": "^2.18.1",
     "mysql2": "^2.3.0",
     "sequelize": "^6.6.5"
   },

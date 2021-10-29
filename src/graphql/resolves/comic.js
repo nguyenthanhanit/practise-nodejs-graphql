@@ -4,24 +4,24 @@ const {Op} = require("sequelize");
 module.exports = {
     Query: {
         getComics: (parent, args, context) => {
-            return context.Comic.findAll()
+            return context.sequelize.Comic.findAll()
         },
         getComic: (parent, args, context) => {
-            return context.Comic.findByPk(args.id)
+            return context.sequelize.Comic.findByPk(args.id)
         }
     },
     Mutation: {
         async createComic(parent, args, context) {
-            const comic = await context.Comic.create(args);
+            const comic = await context.sequelize.Comic.create(args);
             await comic.addCategories(args.categories);
-            return context.Comic.findByPk(comic.id)
+            return context.sequelize.Comic.findByPk(comic.id)
         },
         async updateComic(parent, args, context) {
-            const comic = await context.Comic.findByPk(args.id, {
+            const comic = await context.sequelize.Comic.findByPk(args.id, {
                 attributes: ['id'],
                 include: [
                     {
-                        model: context.Category,
+                        model: context.sequelize.Category,
                         attributes: ['id'],
                         through: {
                             attributes: []
@@ -36,21 +36,21 @@ module.exports = {
             if (!_.isEmpty(removeCategories)) {
                 await comic.removeCategories(removeCategories)
             }
-            await context.Comic.update(args, {
+            await context.sequelize.Comic.update(args, {
                 where: {
                     id: args.id
                 }
             })
-            return context.Comic.findByPk(args.id)
+            return context.sequelize.Comic.findByPk(args.id)
         },
         deleteComic(parent, args, context) {
-            return context.Comic.destroy({
+            return context.sequelize.Comic.destroy({
                 where: args
             });
         },
         async updateVisibleComic(parent, args, context) {
             if (!_.isEmpty(args.PublicComics)) {
-                await context.Comic.update({
+                await context.sequelize.Comic.update({
                     visible: true
                 }, {
                     where: {
@@ -61,7 +61,7 @@ module.exports = {
                 })
             }
             if (!_.isEmpty(args.PrivateComics)) {
-                await context.Comic.update({
+                await context.sequelize.Comic.update({
                     visible: false
                 }, {
                     where: {
